@@ -2,9 +2,11 @@
   "name": "vue-nice-avatar",
   "version": "0.1.0",
   "private": true,
+  "main": "dist/niceAvatar.umd.min.js",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --entry ./src/components/NiceAvatar.vue --target lib --name niceAvatar",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
