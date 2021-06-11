@@ -39,3 +39,15 @@ export const MOUTH = {
   SMIRK: "smirk",
   SUPRISED: "suprised",
 };
+
+export const HAIR = {
+  NONE: "none",
+  DANNY_PHANTOM: "danny-phantom",
+  DOUG_FUNNY: "doug-funny",
+  FONZA: "fonza",
+  FULL: "full",
+  MR_CLEAN: "mr-clean",
+  MR_T: "mr-t",
+  PIXIE: "pixie",
+  TURBAN: "turban",
+};

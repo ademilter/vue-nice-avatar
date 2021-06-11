@@ -1,4 +1,4 @@
-import { EYES, EYEBROWS, EAR, BASE, EARRING, MOUTH } from "./types";
+import { EYES, EYEBROWS, EAR, BASE, EARRING, MOUTH, HAIR } from "./types";
 
 export default {
   size: {
@@ -42,6 +42,13 @@ export default {
     type: String,
     validator: function (value) {
       return Object.values(MOUTH).indexOf(value) !== -1;
+    },
+  },
+  hair: {
+    default: HAIR.DANNY_PHANTOM,
+    type: String,
+    validator: function (value) {
+      return Object.values(HAIR).indexOf(value) !== -1;
     },
   },
 };

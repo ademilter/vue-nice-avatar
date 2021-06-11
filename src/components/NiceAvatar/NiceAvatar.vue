@@ -19,32 +19,13 @@
       <circle cx="190" cy="190" r="190" fill="#FFEDEF" />
     </mask>
     <g mask="url(#mask0)">
+      <!-- -->
       <Base :base="base" />
-
       <Mouth :mouth="mouth" />
-
       <EyeBrows :eye-brow="eyeBrow" />
-
-      <path
-        opacity="0.25"
-        d="M246.986 108.176C238.986 101.776 225.153 101.176 219.486 101.676L211.486 75.1758C225.086 78.3758 243.486 99.1758 246.986 108.176Z"
-        fill="black"
-      />
-      <path
-        d="M144.792 42.7636C144.792 42.7636 150.53 38.802 174.746 32.701C198.963 26.5999 207.792 28.9833 207.792 28.9833L219.581 101.815C219.581 101.815 211.542 101.642 191.548 106.009C171.555 110.375 161.986 115.675 161.986 115.675L144.792 42.7636Z"
-        fill="black"
-      />
-      <path
-        d="M107.985 117.676C101.185 76.0758 131.319 49.5091 144.985 42.1758L161.985 115.676C142.785 76.0758 116.652 100.509 107.985 117.676Z"
-        fill="black"
-      />
-      <path
-        opacity="0.25"
-        d="M126.485 161.675C119.285 134.475 148.485 119.842 161.985 115.675C154.985 99.3415 138.985 84.6749 119.485 102.676C101.485 133.175 108.485 156.676 113.986 174.675L126.485 161.675Z"
-        fill="black"
-      />
-
+      <Hair :hair="hair" />
       <Eyes :eye="eye" />
+      <!-- -->
 
       <path
         d="M200.277 178.926C205.497 176.94 214.601 177.54 214.04 187.639C213.542 196.615 204.333 198.397 201.4 196.304"
@@ -123,12 +104,11 @@ import Base from "@/components/NiceAvatar/Base";
 import Ear from "@/components/NiceAvatar/Ear";
 import Earring from "@/components/NiceAvatar/Earring";
 import Mouth from "@/components/NiceAvatar/Mouth";
+import Hair from "@/components/NiceAvatar/Hair";
 
 export default {
   name: "NiceAvatar",
-  components: { Mouth, Base, EyeBrows, Eyes, Ear, Earring },
+  components: { Hair, Mouth, Base, EyeBrows, Eyes, Ear, Earring },
   props,
 };
 </script>
-
-<style scoped></style>

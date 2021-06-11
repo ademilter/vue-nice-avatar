@@ -8,6 +8,7 @@
       :ear="ear"
       :earring="earring"
       :mouth="mouth"
+      :hair="hair"
     />
 
     <div class="options">
@@ -84,6 +85,16 @@
           </label>
         </div>
       </div>
+
+      <div>
+        <h4>Hair</h4>
+        <div>
+          <label v-for="value in hairValues" :key="value">
+            <input type="radio" name="hair" :value="value" v-model="hair" />
+            {{ value }}
+          </label>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -96,6 +107,7 @@ import {
   EAR,
   EARRING,
   MOUTH,
+  HAIR,
 } from "./components/NiceAvatar/types";
 import NiceAvatar from "./components/NiceAvatar/NiceAvatar";
 
@@ -112,6 +124,7 @@ export default {
       ear: EAR.SMALL,
       earring: EARRING.HOOP,
       mouth: MOUTH.LAUGHING,
+      hair: HAIR.DANNY_PHANTOM,
     };
   },
   computed: {
@@ -132,6 +145,9 @@ export default {
     },
     mouthValues() {
       return Object.values(MOUTH);
+    },
+    hairValues() {
+      return Object.values(HAIR);
     },
   },
 };
