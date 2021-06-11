@@ -10,56 +10,80 @@
       :mouth="mouth"
     />
 
-    <div>
-      <h4>Base</h4>
-      <label v-for="value in baseValues" :key="value">
-        <input type="radio" name="base" :value="value" v-model="base" />
-        {{ value }}
-      </label>
-      <label>
-        <input type="color" name="base" v-model="base" />
-        custom
-      </label>
-    </div>
+    <div class="options">
+      <div>
+        <h4>Base</h4>
+        <div>
+          <label v-for="value in baseValues" :key="value">
+            <input type="radio" name="base" :value="value" v-model="base" />
+            {{ value }}
+          </label>
+          <label>
+            <input type="color" name="base" v-model="base" />
+            custom
+          </label>
+        </div>
+      </div>
 
-    <div>
-      <h4>Eyes</h4>
-      <label v-for="value in eyesValues" :key="value">
-        <input type="radio" name="eye" :value="value" v-model="eye" />
-        {{ value }}
-      </label>
-    </div>
+      <div>
+        <h4>Eyes</h4>
+        <div>
+          <label v-for="value in eyesValues" :key="value">
+            <input type="radio" name="eye" :value="value" v-model="eye" />
+            {{ value }}
+          </label>
+        </div>
+      </div>
 
-    <div>
-      <h4>Eyebrows and Eyelashes</h4>
-      <label v-for="value in eyeBrowsValues" :key="value">
-        <input type="radio" name="eyeBrows" :value="value" v-model="eyeBrow" />
-        {{ value }}
-      </label>
-    </div>
+      <div>
+        <h4>Eyebrows and Eyelashes</h4>
+        <div>
+          <label v-for="value in eyeBrowsValues" :key="value">
+            <input
+              type="radio"
+              name="eyeBrows"
+              :value="value"
+              v-model="eyeBrow"
+            />
+            {{ value }}
+          </label>
+        </div>
+      </div>
 
-    <div>
-      <h4>Ear</h4>
-      <label v-for="value in earValues" :key="value">
-        <input type="radio" name="ear" :value="value" v-model="ear" />
-        {{ value }}
-      </label>
-    </div>
+      <div>
+        <h4>Ear</h4>
+        <div>
+          <label v-for="value in earValues" :key="value">
+            <input type="radio" name="ear" :value="value" v-model="ear" />
+            {{ value }}
+          </label>
+        </div>
+      </div>
 
-    <div>
-      <h4>Earring</h4>
-      <label v-for="value in earringValues" :key="value">
-        <input type="radio" name="earring" :value="value" v-model="earring" />
-        {{ value }}
-      </label>
-    </div>
+      <div>
+        <h4>Earring</h4>
+        <div>
+          <label v-for="value in earringValues" :key="value">
+            <input
+              type="radio"
+              name="earring"
+              :value="value"
+              v-model="earring"
+            />
+            {{ value }}
+          </label>
+        </div>
+      </div>
 
-    <div>
-      <h4>Mouth</h4>
-      <label v-for="value in mouthValues" :key="value">
-        <input type="radio" name="earring" :value="value" v-model="mouth" />
-        {{ value }}
-      </label>
+      <div>
+        <h4>Mouth</h4>
+        <div>
+          <label v-for="value in mouthValues" :key="value">
+            <input type="radio" name="earring" :value="value" v-model="mouth" />
+            {{ value }}
+          </label>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -112,3 +136,32 @@ export default {
   },
 };
 </script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: sans-serif;
+}
+body {
+  padding: 30px;
+}
+.options {
+  display: grid;
+  grid-gap: 20px;
+}
+.options > div {
+  display: grid;
+  grid-gap: 10px;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+</style>
