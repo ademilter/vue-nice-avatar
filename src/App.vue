@@ -1,23 +1,32 @@
 <template>
   <div class="screen">
-    <NiceAvatar
-      class="avatar"
-      size="230"
-      :base="base"
-      :eye="eye"
-      :eye-brow="eyeBrow"
-      :ear="ear"
-      :earring="earring"
-      :mouth="mouth"
-      :hair="hair"
-      :nose="nose"
-      :glasses="glasses"
-      :beard="beard"
-      :beard-color="beardColor"
-      :shirt="shirt"
-    />
+    <div class="avatar">
+      <NiceAvatar
+        :size="size"
+        :base="base"
+        :eye="eye"
+        :eye-brow="eyeBrow"
+        :ear="ear"
+        :earring="earring"
+        :mouth="mouth"
+        :hair="hair"
+        :nose="nose"
+        :glasses="glasses"
+        :beard="beard"
+        :beard-color="beardColor"
+        :shirt="shirt"
+        :bg-color="bgColor"
+      />
+    </div>
 
     <div class="options">
+      <div>
+        <input type="range" min="60" max="250" v-model="size" />
+      </div>
+      <div>
+        <button type="button" @click="random">random</button>
+      </div>
+
       <div>
         <h4>Base</h4>
         <div>
@@ -165,6 +174,7 @@ import {
   GLASSES,
   BEARD,
   SHIRT,
+  COLORS,
 } from "./components/NiceAvatar/types";
 import NiceAvatar from "./components/NiceAvatar/NiceAvatar";
 
@@ -175,18 +185,20 @@ export default {
   },
   data() {
     return {
+      size: null,
       base: BASE.LIGHT,
       eye: EYES.OVAL,
       eyeBrow: EYEBROWS.EYEBROWS_UP,
       ear: EAR.SMALL,
-      earring: EARRING.HOOP,
+      earring: EARRING.NONE,
       mouth: MOUTH.LAUGHING,
-      hair: HAIR.DANNY_PHANTOM,
+      hair: HAIR.FONZA,
       nose: NOSE.CURVE,
       glasses: GLASSES.NONE,
       beard: BEARD.NONE,
       beardColor: "#a56d55",
       shirt: SHIRT.COLLARED,
+      bgColor: COLORS.SEASHELL,
     };
   },
   computed: {
@@ -222,6 +234,26 @@ export default {
     },
     shirtValues() {
       return Object.values(SHIRT);
+    },
+  },
+  methods: {
+    random() {
+      this.bgColor = this.getRandom(Object.values(COLORS));
+      this.base = this.getRandom([COLORS.APRICOT, COLORS.COAST]);
+      this.beard = this.getRandom(Object.values(BEARD));
+      this.beardColor = this.getRandom([COLORS.APRICOT, COLORS.COAST]);
+      this.eye = this.getRandom(Object.values(EYES));
+      this.eyeBrow = this.getRandom(Object.values(EYEBROWS));
+      this.ear = this.getRandom(Object.values(EAR));
+      this.earring = this.getRandom(Object.values(EARRING));
+      this.mouth = this.getRandom(Object.values(MOUTH));
+      this.hair = this.getRandom(Object.values(HAIR));
+      this.nose = this.getRandom(Object.values(NOSE));
+      this.glasses = this.getRandom(Object.values(GLASSES));
+      this.shirt = this.getRandom(Object.values(SHIRT));
+    },
+    getRandom(list) {
+      return list[Math.floor(Math.random() * list.length)];
     },
   },
 };
@@ -260,6 +292,7 @@ body {
 .options {
   display: grid;
   grid-gap: 20px;
+  justify-items: flex-start;
 }
 
 .options > div {

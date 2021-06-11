@@ -6,7 +6,7 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <circle cx="190" cy="190" r="190" fill="#FFEDEF" />
+    <circle cx="190" cy="190" r="190" :fill="bgColor" />
     <mask
       id="mask0"
       mask-type="alpha"

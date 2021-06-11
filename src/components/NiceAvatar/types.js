@@ -76,3 +76,17 @@ export const SHIRT = {
   CREW: "crew",
   OPEN: "open",
 };
+
+export const COLORS = {
+  APRICOT: "#F9C9B6",
+  COAST: "#AC6651",
+  TOPAZ: "#77311D",
+  LAVENDER: "#9287FF",
+  SKY: "#77311D",
+  SALMON: "#FC909F",
+  CANARY: "#F4D150",
+  CALM: "#E0DDFF",
+  AZURE: "#D2EFF3",
+  SEASHELL: "#FFEDEF",
+  MELLOW: "#FFEBA4",
+};

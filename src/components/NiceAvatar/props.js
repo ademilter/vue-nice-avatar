@@ -10,12 +10,17 @@ import {
   GLASSES,
   BEARD,
   SHIRT,
+  COLORS,
 } from "./types";
 
 export default {
   size: {
     default: 120,
     type: [String, Number],
+  },
+  bgColor: {
+    default: COLORS.AZURE,
+    type: String,
   },
   base: {
     default: BASE.LIGHT,
@@ -43,7 +48,7 @@ export default {
     },
   },
   earring: {
-    default: EARRING.STUD,
+    default: EARRING.NONE,
     type: String,
     validator: function (value) {
       return Object.values(EARRING).indexOf(value) !== -1;
