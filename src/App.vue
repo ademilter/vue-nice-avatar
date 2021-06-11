@@ -1,6 +1,24 @@
 <template>
   <div>
-    <NiceAvatar :eye="eye" :eye-brow="eyeBrow" :ear="ear" />
+    <NiceAvatar
+      :base="base"
+      :eye="eye"
+      :eye-brow="eyeBrow"
+      :ear="ear"
+      :earring="earring"
+    />
+
+    <div>
+      <h4>Base</h4>
+      <label v-for="value in baseValues" :key="value">
+        <input type="radio" name="base" :value="value" v-model="base" />
+        {{ value }}
+      </label>
+      <label>
+        <input type="color" name="base" v-model="base" />
+        custom
+      </label>
+    </div>
 
     <div>
       <h4>Eyes</h4>
@@ -25,11 +43,25 @@
         {{ value }}
       </label>
     </div>
+
+    <div>
+      <h4>Ear</h4>
+      <label v-for="value in earringValues" :key="value">
+        <input type="radio" name="earring" :value="value" v-model="earring" />
+        {{ value }}
+      </label>
+    </div>
   </div>
 </template>
 
 <script>
-import { EYES, EYEBROWS, EAR } from "./components/NiceAvatar/types";
+import {
+  BASE,
+  EYES,
+  EYEBROWS,
+  EAR,
+  EARRING,
+} from "./components/NiceAvatar/types";
 import NiceAvatar from "./components/NiceAvatar/NiceAvatar";
 
 export default {
@@ -39,12 +71,17 @@ export default {
   },
   data() {
     return {
+      base: BASE.LIGHT,
       eye: EYES.OVAL,
       eyeBrow: EYEBROWS.EYEBROWS_UP,
       ear: EAR.SMALL,
+      earring: EARRING.HOOP,
     };
   },
   computed: {
+    baseValues() {
+      return Object.values(BASE);
+    },
     eyesValues() {
       return Object.values(EYES);
     },
@@ -53,6 +90,9 @@ export default {
     },
     earValues() {
       return Object.values(EAR);
+    },
+    earringValues() {
+      return Object.values(EARRING);
     },
   },
 };

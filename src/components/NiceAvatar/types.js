@@ -1,3 +1,8 @@
+export const BASE = {
+  LIGHT: "#F9C9B6",
+  DARK: "#AC6651",
+};
+
 export const EYES = {
   CIRCLE: "circle",
   OVAL: "oval",
@@ -16,4 +21,10 @@ export const EYEBROWS = {
 export const EAR = {
   SMALL: "small",
   BIG: "big",
+};
+
+export const EARRING = {
+  NONE: "none",
+  STUD: "stud",
+  HOOP: "hoop",
 };
