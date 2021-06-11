@@ -9,6 +9,7 @@ import {
   NOSE,
   GLASSES,
   BEARD,
+  SHIRT,
 } from "./types";
 
 export default {
@@ -86,5 +87,12 @@ export default {
   beardColor: {
     default: "#a56d55",
     type: String,
+  },
+  shirt: {
+    default: SHIRT.COLLARED,
+    type: String,
+    validator: function (value) {
+      return Object.values(SHIRT).indexOf(value) !== -1;
+    },
   },
 };

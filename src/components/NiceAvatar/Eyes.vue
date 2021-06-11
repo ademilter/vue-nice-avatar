@@ -1,6 +1,6 @@
 <template>
   <g>
-    <template v-if="eye === EYE.CIRCLE">
+    <template v-if="eye === EYES.CIRCLE">
       <ellipse
         cx="168.117"
         cy="167.927"
@@ -19,7 +19,7 @@
       />
     </template>
 
-    <template v-else-if="eye === EYE.OVAL">
+    <template v-else-if="eye === EYES.OVAL">
       <ellipse
         cx="168.53"
         cy="168.402"
@@ -38,7 +38,7 @@
       />
     </template>
 
-    <template v-else-if="eye === EYE.SMILE">
+    <template v-else-if="eye === EYES.SMILE">
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
@@ -53,7 +53,7 @@
       />
     </template>
 
-    <template v-else-if="eye === EYE.SHADOW">
+    <template v-else-if="eye === EYES.SHADOW">
       <circle
         cx="167.24"
         cy="159.239"
@@ -99,7 +99,7 @@ export default {
   },
   data() {
     return {
-      EYE: EYES,
+      EYES,
     };
   },
 };

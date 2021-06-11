@@ -70,3 +70,9 @@ export const BEARD = {
   HIPSTER: "hipster",
   SCRUFF: "scruff",
 };
+
+export const SHIRT = {
+  COLLARED: "collared",
+  CREW: "crew",
+  OPEN: "open",
+};

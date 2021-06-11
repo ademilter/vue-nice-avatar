@@ -13,6 +13,7 @@
       :glasses="glasses"
       :beard="beard"
       :beard-color="beardColor"
+      :shirt="shirt"
     />
 
     <div class="options">
@@ -136,6 +137,16 @@
           </label>
         </div>
       </div>
+
+      <div>
+        <h4>Shirt</h4>
+        <div>
+          <label v-for="value in shirtValues" :key="value">
+            <input type="radio" name="shirt" :value="value" v-model="shirt" />
+            {{ value }}
+          </label>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -152,6 +163,7 @@ import {
   NOSE,
   GLASSES,
   BEARD,
+  SHIRT,
 } from "./components/NiceAvatar/types";
 import NiceAvatar from "./components/NiceAvatar/NiceAvatar";
 
@@ -173,6 +185,7 @@ export default {
       glasses: GLASSES.NONE,
       beard: BEARD.NONE,
       beardColor: "#a56d55",
+      shirt: SHIRT.COLLARED,
     };
   },
   computed: {
@@ -205,6 +218,9 @@ export default {
     },
     beardValues() {
       return Object.values(BEARD);
+    },
+    shirtValues() {
+      return Object.values(SHIRT);
     },
   },
 };
