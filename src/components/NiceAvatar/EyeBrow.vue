@@ -1,6 +1,6 @@
 <template>
   <g>
-    <template v-if="eyeBrow === EYEBROWS.DOWN">
+    <template v-if="eyeBrow === EYEBROWS.EYEBROWS_DOWN">
       <path
         d="M147 148.5C153.167 151 168.1 151.5 178.5 133.5"
         stroke="black"
@@ -15,7 +15,7 @@
       />
     </template>
 
-    <template v-else-if="eyeBrow === EYEBROWS.UP">
+    <template v-else-if="eyeBrow === EYEBROWS.EYEBROWS_UP">
       <path
         d="M219 132.214C224.667 129.548 238 127.114 246 138.714"
         stroke="black"
@@ -30,7 +30,7 @@
       />
     </template>
 
-    <template v-else-if="eyeBrow === EYEBROWS.EYELASHESDOWN">
+    <template v-else-if="eyeBrow === EYEBROWS.EYELASHES_DOWN">
       <path
         d="M147 148.5C153.167 151 168.1 151.5 178.5 133.5"
         stroke="black"
@@ -81,7 +81,7 @@
       />
     </template>
 
-    <template v-else-if="eyeBrow === EYEBROWS.EYELASHESUP">
+    <template v-else-if="eyeBrow === EYEBROWS.EYELASHES_UP">
       <path
         d="M219 132.214C224.667 129.548 238 127.114 246 138.714"
         stroke="black"

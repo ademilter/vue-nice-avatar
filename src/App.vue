@@ -1,17 +1,27 @@
 <template>
   <div>
-    <NiceAvatar :eye="eye" :eye-brow="eyeBrow" />
+    <NiceAvatar :eye="eye" :eye-brow="eyeBrow" :ear="ear" />
 
     <div>
-      <label v-for="value in eyes" :key="value">
+      <h4>Eyes</h4>
+      <label v-for="value in eyesValues" :key="value">
         <input type="radio" name="eye" :value="value" v-model="eye" />
         {{ value }}
       </label>
     </div>
 
     <div>
-      <label v-for="value in eyeBrows" :key="value">
+      <h4>Eyebrows and Eyelashes</h4>
+      <label v-for="value in eyeBrowsValues" :key="value">
         <input type="radio" name="eyeBrows" :value="value" v-model="eyeBrow" />
+        {{ value }}
+      </label>
+    </div>
+
+    <div>
+      <h4>Ear</h4>
+      <label v-for="value in earValues" :key="value">
+        <input type="radio" name="ear" :value="value" v-model="ear" />
         {{ value }}
       </label>
     </div>
@@ -19,7 +29,7 @@
 </template>
 
 <script>
-import { EYE, EYEBROWS } from "./components/NiceAvatar/types";
+import { EYES, EYEBROWS, EAR } from "./components/NiceAvatar/types";
 import NiceAvatar from "./components/NiceAvatar/NiceAvatar";
 
 export default {
@@ -29,16 +39,20 @@ export default {
   },
   data() {
     return {
-      eye: EYE.OVAL,
-      eyeBrow: EYEBROWS.UP,
+      eye: EYES.OVAL,
+      eyeBrow: EYEBROWS.EYEBROWS_UP,
+      ear: EAR.SMALL,
     };
   },
   computed: {
-    eyes() {
-      return Object.values(EYE);
+    eyesValues() {
+      return Object.values(EYES);
     },
-    eyeBrows() {
+    eyeBrowsValues() {
       return Object.values(EYEBROWS);
+    },
+    earValues() {
+      return Object.values(EAR);
     },
   },
 };

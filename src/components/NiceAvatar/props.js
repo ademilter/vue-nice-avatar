@@ -1,11 +1,11 @@
-import { EYE, EYEBROWS } from "./types";
+import { EYES, EYEBROWS, EAR } from "./types";
 
 export default {
   eye: {
-    default: EYE.CIRCLE,
+    default: EYES.CIRCLE,
     type: String,
     validator: function (value) {
-      return Object.values(EYE).indexOf(value) !== -1;
+      return Object.values(EYES).indexOf(value) !== -1;
     },
   },
   eyeBrow: {
@@ -13,6 +13,13 @@ export default {
     type: String,
     validator: function (value) {
       return Object.values(EYEBROWS).indexOf(value) !== -1;
+    },
+  },
+  ear: {
+    default: EAR.SMALL,
+    type: String,
+    validator: function (value) {
+      return Object.values(EAR).indexOf(value) !== -1;
     },
   },
 };

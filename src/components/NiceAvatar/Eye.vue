@@ -90,7 +90,8 @@
 
 <script>
 import props from "./props";
-import { EYE } from "./types";
+import { EYES } from "./types";
+
 export default {
   name: "Eye",
   props: {
@@ -98,7 +99,7 @@ export default {
   },
   data() {
     return {
-      EYE,
+      EYE: EYES,
     };
   },
 };

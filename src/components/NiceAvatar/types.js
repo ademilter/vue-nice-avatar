@@ -1,4 +1,4 @@
-export const EYE = {
+export const EYES = {
   CIRCLE: "circle",
   OVAL: "oval",
   SMILE: "smile",
@@ -7,8 +7,13 @@ export const EYE = {
 
 export const EYEBROWS = {
   NONE: "none",
-  UP: "up",
-  DOWN: "down",
-  EYELASHESDOWN: "eyelashes-down",
-  EYELASHESUP: "eyelashes-up",
+  EYEBROWS_UP: "eyebrows-up",
+  EYEBROWS_DOWN: "eyebrows-down",
+  EYELASHES_DOWN: "eyelashes-down",
+  EYELASHES_UP: "eyelashes-up",
+};
+
+export const EAR = {
+  SMALL: "small",
+  BIG: "big",
 };
