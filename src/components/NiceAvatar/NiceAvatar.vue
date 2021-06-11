@@ -20,11 +20,12 @@
     </mask>
     <g mask="url(#mask0)">
       <!-- -->
-      <Base :base="base" />
+      <Base :base="base" :beard="beard" :beard-color="beardColor" />
       <Mouth :mouth="mouth" />
       <EyeBrows :eye-brow="eyeBrow" />
       <Hair :hair="hair" />
       <Eyes :eye="eye" />
+      <Glasses :glasses="glasses" />
       <Nose :nose="nose" />
       <Ear :ear="ear" :base="base" />
       <Earring :ear="ear" :earring="earring" />
@@ -99,10 +100,21 @@ import Earring from "@/components/NiceAvatar/Earring";
 import Mouth from "@/components/NiceAvatar/Mouth";
 import Hair from "@/components/NiceAvatar/Hair";
 import Nose from "@/components/NiceAvatar/Nose";
+import Glasses from "@/components/NiceAvatar/Glasses";
 
 export default {
   name: "NiceAvatar",
-  components: { Hair, Mouth, Base, EyeBrows, Eyes, Ear, Earring, Nose },
+  components: {
+    Glasses,
+    Hair,
+    Mouth,
+    Base,
+    EyeBrows,
+    Eyes,
+    Ear,
+    Earring,
+    Nose,
+  },
   props,
 };
 </script>

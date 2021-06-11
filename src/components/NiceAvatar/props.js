@@ -1,4 +1,15 @@
-import { EYES, EYEBROWS, EAR, BASE, EARRING, MOUTH, HAIR, NOSE } from "./types";
+import {
+  EYES,
+  EYEBROWS,
+  EAR,
+  BASE,
+  EARRING,
+  MOUTH,
+  HAIR,
+  NOSE,
+  GLASSES,
+  BEARD,
+} from "./types";
 
 export default {
   size: {
@@ -57,5 +68,23 @@ export default {
     validator: function (value) {
       return Object.values(NOSE).indexOf(value) !== -1;
     },
+  },
+  glasses: {
+    default: GLASSES.NONE,
+    type: String,
+    validator: function (value) {
+      return Object.values(GLASSES).indexOf(value) !== -1;
+    },
+  },
+  beard: {
+    default: BEARD.NONE,
+    type: String,
+    validator: function (value) {
+      return Object.values(BEARD).indexOf(value) !== -1;
+    },
+  },
+  beardColor: {
+    default: "#a56d55",
+    type: String,
   },
 };

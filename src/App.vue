@@ -10,6 +10,9 @@
       :mouth="mouth"
       :hair="hair"
       :nose="nose"
+      :glasses="glasses"
+      :beard="beard"
+      :beard-color="beardColor"
     />
 
     <div class="options">
@@ -22,7 +25,19 @@
           </label>
           <label>
             <input type="color" name="base" v-model="base" />
-            custom
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <h4>Beard</h4>
+        <div>
+          <label v-for="value in beardValues" :key="value">
+            <input type="radio" name="beard" :value="value" v-model="beard" />
+            {{ value }}
+          </label>
+          <label>
+            <input type="color" name="beardColor" v-model="beardColor" />
           </label>
         </div>
       </div>
@@ -106,6 +121,21 @@
           </label>
         </div>
       </div>
+
+      <div>
+        <h4>Glasses</h4>
+        <div>
+          <label v-for="value in glassesValues" :key="value">
+            <input
+              type="radio"
+              name="glasses"
+              :value="value"
+              v-model="glasses"
+            />
+            {{ value }}
+          </label>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -120,6 +150,8 @@ import {
   MOUTH,
   HAIR,
   NOSE,
+  GLASSES,
+  BEARD,
 } from "./components/NiceAvatar/types";
 import NiceAvatar from "./components/NiceAvatar/NiceAvatar";
 
@@ -138,6 +170,9 @@ export default {
       mouth: MOUTH.LAUGHING,
       hair: HAIR.DANNY_PHANTOM,
       nose: NOSE.CURVE,
+      glasses: GLASSES.NONE,
+      beard: BEARD.NONE,
+      beardColor: "#a56d55",
     };
   },
   computed: {
@@ -164,6 +199,12 @@ export default {
     },
     noseValues() {
       return Object.values(NOSE);
+    },
+    glassesValues() {
+      return Object.values(GLASSES);
+    },
+    beardValues() {
+      return Object.values(BEARD);
     },
   },
 };

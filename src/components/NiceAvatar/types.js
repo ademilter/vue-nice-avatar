@@ -58,3 +58,15 @@ export const NOSE = {
   POINTED: "pointed",
   ROUND: "round",
 };
+
+export const GLASSES = {
+  NONE: "none",
+  ROUND: "round",
+  SQUARE: "square",
+};
+
+export const BEARD = {
+  NONE: "none",
+  HIPSTER: "hipster",
+  SCRUFF: "scruff",
+};

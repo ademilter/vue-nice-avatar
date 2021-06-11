@@ -43,17 +43,22 @@
       fill="black"
       mask="url(#path-6-inside-1)"
     />
+    <Beard :beard="beard" :beard-color="beardColor" />
   </g>
 </template>
 
 <script>
 import props from "@/components/NiceAvatar/props";
 import { BASE } from "@/components/NiceAvatar/types";
+import Beard from "@/components/NiceAvatar/Beard";
 
 export default {
   name: "Base",
+  components: { Beard },
   props: {
     base: props.base,
+    beard: props.beard,
+    beardColor: props.beardColor,
   },
   data() {
     return {
