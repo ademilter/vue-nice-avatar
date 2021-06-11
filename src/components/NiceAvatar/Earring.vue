@@ -7,6 +7,24 @@
         stroke-width="4"
       />
     </template>
+
+    <template v-else-if="ear === EAR.SMALL && earring === EARRING.STUD">
+      <circle cx="122" cy="211" r="4" fill="#F4D150" />
+      <circle cx="123" cy="210" r="1" fill="#FFEDEF" />
+    </template>
+
+    <template v-else-if="ear === EAR.BIG && earring === EARRING.HOOP">
+      <path
+        d="M114 214C127.255 214 138 224.745 138 238C138 251.255 127.255 262 114 262C100.745 262 90 251.255 90 238C90 231.609 93.5 226.5 96.5715 221.5L97.5 220"
+        stroke="#F4D150"
+        stroke-width="4"
+      />
+    </template>
+
+    <template v-else-if="ear === EAR.BIG && earring === EARRING.STUD">
+      <circle cx="115" cy="216" r="4" fill="#F4D150" />
+      <circle cx="116" cy="215" r="1" fill="#FFEDEF" />
+    </template>
   </g>
 </template>
 

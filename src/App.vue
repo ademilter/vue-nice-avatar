@@ -1,11 +1,13 @@
 <template>
   <div>
     <NiceAvatar
+      size="230"
       :base="base"
       :eye="eye"
       :eye-brow="eyeBrow"
       :ear="ear"
       :earring="earring"
+      :mouth="mouth"
     />
 
     <div>
@@ -45,9 +47,17 @@
     </div>
 
     <div>
-      <h4>Ear</h4>
+      <h4>Earring</h4>
       <label v-for="value in earringValues" :key="value">
         <input type="radio" name="earring" :value="value" v-model="earring" />
+        {{ value }}
+      </label>
+    </div>
+
+    <div>
+      <h4>Mouth</h4>
+      <label v-for="value in mouthValues" :key="value">
+        <input type="radio" name="earring" :value="value" v-model="mouth" />
         {{ value }}
       </label>
     </div>
@@ -61,6 +71,7 @@ import {
   EYEBROWS,
   EAR,
   EARRING,
+  MOUTH,
 } from "./components/NiceAvatar/types";
 import NiceAvatar from "./components/NiceAvatar/NiceAvatar";
 
@@ -76,6 +87,7 @@ export default {
       eyeBrow: EYEBROWS.EYEBROWS_UP,
       ear: EAR.SMALL,
       earring: EARRING.HOOP,
+      mouth: MOUTH.LAUGHING,
     };
   },
   computed: {
@@ -93,6 +105,9 @@ export default {
     },
     earringValues() {
       return Object.values(EARRING);
+    },
+    mouthValues() {
+      return Object.values(MOUTH);
     },
   },
 };

@@ -28,3 +28,14 @@ export const EARRING = {
   STUD: "stud",
   HOOP: "hoop",
 };
+
+export const MOUTH = {
+  FROWN: "frown",
+  LAUGHING: "laughing",
+  NERVOUS: "nervous",
+  PUCKER: "pucker",
+  SAD: "sad",
+  SMILE: "smile",
+  SMIRK: "smirk",
+  SUPRISED: "suprised",
+};

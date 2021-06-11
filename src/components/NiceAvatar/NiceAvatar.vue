@@ -1,7 +1,7 @@
 <template>
   <svg
-    width="230"
-    height="230"
+    :width="size"
+    :height="size"
     viewBox="0 0 380 380"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -21,35 +21,7 @@
     <g mask="url(#mask0)">
       <Base :base="base" />
 
-      <path
-        d="M243.92 216.331C243.75 214.263 241.636 213.112 239.845 213.818C235.616 215.484 221.627 220.783 211.763 222.14C200.94 223.629 184.55 221.821 179.806 221.232C177.877 220.992 176.157 222.65 176.49 224.665C177.142 228.608 178.484 232.409 180.459 235.891C182.661 239.775 185.606 243.188 189.127 245.933C192.648 248.679 196.676 250.704 200.979 251.893C205.283 253.083 209.779 253.413 214.21 252.864C218.641 252.316 222.921 250.901 226.805 248.698C230.689 246.496 234.101 243.55 236.847 240.029C239.593 236.508 241.618 232.481 242.807 228.178C243.873 224.321 244.248 220.311 243.92 216.331Z"
-        fill="black"
-        stroke="black"
-        stroke-width="4"
-      />
-      <mask
-        id="mask2"
-        mask-type="alpha"
-        maskUnits="userSpaceOnUse"
-        x="178"
-        y="215"
-        width="65"
-        height="37"
-      >
-        <path
-          d="M241.793 215.193C242.309 219.363 241.999 223.594 240.879 227.645C239.76 231.695 237.854 235.486 235.27 238.8C232.686 242.113 229.474 244.886 225.818 246.958C222.163 249.031 218.135 250.364 213.964 250.88C209.794 251.396 205.563 251.085 201.512 249.966C197.462 248.846 193.671 246.94 190.357 244.356C187.043 241.772 184.271 238.56 182.198 234.905C180.126 231.249 178.793 227.221 178.277 223.051L241.793 215.193Z"
-          fill="#171921"
-        />
-      </mask>
-      <g mask="url(#mask2)">
-        <circle
-          cx="214.522"
-          cy="255.315"
-          r="21.5"
-          transform="rotate(-7.05286 214.522 255.315)"
-          fill="#FC909F"
-        />
-      </g>
+      <Mouth :mouth="mouth" />
 
       <EyeBrows :eye-brow="eyeBrow" />
 
@@ -150,10 +122,11 @@ import EyeBrows from "@/components/NiceAvatar/EyeBrows";
 import Base from "@/components/NiceAvatar/Base";
 import Ear from "@/components/NiceAvatar/Ear";
 import Earring from "@/components/NiceAvatar/Earring";
+import Mouth from "@/components/NiceAvatar/Mouth";
 
 export default {
   name: "NiceAvatar",
-  components: { Base, EyeBrows, Eyes, Ear, Earring },
+  components: { Mouth, Base, EyeBrows, Eyes, Ear, Earring },
   props,
 };
 </script>
