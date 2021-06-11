@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="screen">
     <NiceAvatar
+      class="avatar"
       size="230"
       :base="base"
       :eye="eye"
@@ -231,16 +232,36 @@ export default {
   margin: 0;
   padding: 0;
 }
+
 html {
   font-family: sans-serif;
 }
+
 body {
   padding: 30px;
 }
+
+.screen {
+  display: grid;
+  grid-gap: 20px;
+}
+
+@media (min-width: 700px) {
+  .screen {
+    grid-template-columns: 260px 1fr;
+  }
+}
+
+.avatar {
+  position: sticky;
+  top: 30px;
+}
+
 .options {
   display: grid;
   grid-gap: 20px;
 }
+
 .options > div {
   display: grid;
   grid-gap: 10px;
