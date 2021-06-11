@@ -93,18 +93,11 @@
           fill="#FC909F"
         />
       </g>
-      <path
-        d="M219 132.214C224.667 129.548 238 127.114 246 138.714"
-        stroke="black"
-        stroke-width="4"
-        stroke-linecap="round"
-      />
-      <path
-        d="M143.579 157.521C145.65 151.61 153.261 140.396 167.142 142.822"
-        stroke="black"
-        stroke-width="4"
-        stroke-linecap="round"
-      />
+
+      <!--  EARBROWS   -->
+      <EyeBrows :eye-brow="eyeBrow" />
+
+      <!--   saç   -->
       <path
         opacity="0.25"
         d="M246.986 108.176C238.986 101.776 225.153 101.176 219.486 101.676L211.486 75.1758C225.086 78.3758 243.486 99.1758 246.986 108.176Z"
@@ -123,6 +116,7 @@
         d="M126.485 161.675C119.285 134.475 148.485 119.842 161.985 115.675C154.985 99.3415 138.985 84.6749 119.485 102.676C101.485 133.175 108.485 156.676 113.986 174.675L126.485 161.675Z"
         fill="black"
       />
+
       <!--  EAR   -->
       <Eyes :eye="eye" />
 
@@ -213,9 +207,11 @@
 <script>
 import props from "./props";
 import Eyes from "@/components/NiceAvatar/Eye";
+import EyeBrows from "@/components/NiceAvatar/EyeBrow";
+
 export default {
   name: "NiceAvatar",
-  components: { Eyes },
+  components: { EyeBrows, Eyes },
   props,
 };
 </script>
