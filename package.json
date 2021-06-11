@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --entry src/components/NiceAvatar/NiceAvatar.vue --target lib --name niceAvatar",
+    "build": "vue-cli-service build",
+    "package": "vue-cli-service build --entry src/components/NiceAvatar/NiceAvatar.vue --target lib --name niceAvatar",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
