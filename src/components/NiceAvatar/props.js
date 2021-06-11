@@ -1,4 +1,4 @@
-import { EYES, EYEBROWS, EAR, BASE, EARRING, MOUTH, HAIR } from "./types";
+import { EYES, EYEBROWS, EAR, BASE, EARRING, MOUTH, HAIR, NOSE } from "./types";
 
 export default {
   size: {
@@ -49,6 +49,13 @@ export default {
     type: String,
     validator: function (value) {
       return Object.values(HAIR).indexOf(value) !== -1;
+    },
+  },
+  nose: {
+    default: NOSE.CURVE,
+    type: String,
+    validator: function (value) {
+      return Object.values(NOSE).indexOf(value) !== -1;
     },
   },
 };

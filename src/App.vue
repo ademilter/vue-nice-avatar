@@ -9,6 +9,7 @@
       :earring="earring"
       :mouth="mouth"
       :hair="hair"
+      :nose="nose"
     />
 
     <div class="options">
@@ -30,7 +31,7 @@
         <h4>Eyes</h4>
         <div>
           <label v-for="value in eyesValues" :key="value">
-            <input type="radio" name="eye" :value="value" v-model="eye" />
+            <input type="radio" name="eyes" :value="value" v-model="eye" />
             {{ value }}
           </label>
         </div>
@@ -80,7 +81,7 @@
         <h4>Mouth</h4>
         <div>
           <label v-for="value in mouthValues" :key="value">
-            <input type="radio" name="earring" :value="value" v-model="mouth" />
+            <input type="radio" name="mouth" :value="value" v-model="mouth" />
             {{ value }}
           </label>
         </div>
@@ -91,6 +92,16 @@
         <div>
           <label v-for="value in hairValues" :key="value">
             <input type="radio" name="hair" :value="value" v-model="hair" />
+            {{ value }}
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <h4>Nose</h4>
+        <div>
+          <label v-for="value in noseValues" :key="value">
+            <input type="radio" name="nose" :value="value" v-model="nose" />
             {{ value }}
           </label>
         </div>
@@ -108,6 +119,7 @@ import {
   EARRING,
   MOUTH,
   HAIR,
+  NOSE,
 } from "./components/NiceAvatar/types";
 import NiceAvatar from "./components/NiceAvatar/NiceAvatar";
 
@@ -125,6 +137,7 @@ export default {
       earring: EARRING.HOOP,
       mouth: MOUTH.LAUGHING,
       hair: HAIR.DANNY_PHANTOM,
+      nose: NOSE.CURVE,
     };
   },
   computed: {
@@ -148,6 +161,9 @@ export default {
     },
     hairValues() {
       return Object.values(HAIR);
+    },
+    noseValues() {
+      return Object.values(NOSE);
     },
   },
 };

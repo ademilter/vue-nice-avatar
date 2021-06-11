@@ -25,14 +25,7 @@
       <EyeBrows :eye-brow="eyeBrow" />
       <Hair :hair="hair" />
       <Eyes :eye="eye" />
-      <!-- -->
-
-      <path
-        d="M200.277 178.926C205.497 176.94 214.601 177.54 214.04 187.639C213.542 196.615 204.333 198.397 201.4 196.304"
-        stroke="black"
-        stroke-width="4"
-      />
-
+      <Nose :nose="nose" />
       <Ear :ear="ear" :base="base" />
       <Earring :ear="ear" :earring="earring" />
 
@@ -105,10 +98,11 @@ import Ear from "@/components/NiceAvatar/Ear";
 import Earring from "@/components/NiceAvatar/Earring";
 import Mouth from "@/components/NiceAvatar/Mouth";
 import Hair from "@/components/NiceAvatar/Hair";
+import Nose from "@/components/NiceAvatar/Nose";
 
 export default {
   name: "NiceAvatar",
-  components: { Hair, Mouth, Base, EyeBrows, Eyes, Ear, Earring },
+  components: { Hair, Mouth, Base, EyeBrows, Eyes, Ear, Earring, Nose },
   props,
 };
 </script>

@@ -51,3 +51,10 @@ export const HAIR = {
   PIXIE: "pixie",
   TURBAN: "turban",
 };
+
+export const NOSE = {
+  NONE: "none",
+  CURVE: "curve",
+  POINTED: "pointed",
+  ROUND: "round",
+};
