@@ -1,9 +1,23 @@
 {
   "name": "vue-nice-avatar",
-  "version": "0.1.0",
-  "private": true,
-  "main": "dist/niceAvatar.umd.min.js",
+  "description": "Dummy avatar generator",
+  "author": "Adem ilter <ademilter@gmail.com>",
+  "homepage": "https://vue-nice-avatar.vercel.app/",
+  "version": "1.0.1",
+  "main": "dist/niceAvatar.umd.js",
   "license": "MIT",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "avatar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ademilter/vue-nice-avatar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ademilter/vue-nice-avatar/issues"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
