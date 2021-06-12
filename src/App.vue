@@ -236,6 +236,9 @@ export default {
       return Object.values(SHIRT);
     },
   },
+  mounted() {
+    this.random();
+  },
   methods: {
     random() {
       this.bgColor = this.getRandom(Object.values(COLORS));

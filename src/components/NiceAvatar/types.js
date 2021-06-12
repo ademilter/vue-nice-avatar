@@ -53,7 +53,6 @@ export const HAIR = {
 };
 
 export const NOSE = {
-  NONE: "none",
   CURVE: "curve",
   POINTED: "pointed",
   ROUND: "round",
