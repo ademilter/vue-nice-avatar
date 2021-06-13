@@ -24,9 +24,12 @@
       <div>
         <input type="range" min="60" max="250" v-model="size" />
       </div>
-      <div>
+      <div class="buttons">
         <button type="button" @click="random">Random</button>
         <button type="button" @click="getPng">Save as PNG</button>
+        <a target="_blank" href="https://github.com/ademilter/vue-nice-avatar"
+          >Github</a
+        >
       </div>
 
       <div>
@@ -324,5 +327,12 @@ label {
 
 button {
   padding: 4px 6px;
+}
+
+.buttons {
+  display: grid;
+  grid-gap: 10px;
+  grid-auto-flow: column;
+  align-items: center;
 }
 </style>
