@@ -3,7 +3,7 @@
   "description": "Dummy avatar generator",
   "author": "Adem ilter <ademilter@gmail.com>",
   "homepage": "https://vue-nice-avatar.vercel.app/",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/niceAvatar.umd.js",
   "license": "MIT",
   "keywords": [
