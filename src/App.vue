@@ -2,6 +2,7 @@
   <div class="screen">
     <div class="avatar">
       <NiceAvatar
+        id="NiceAvatar"
         :size="size"
         :base="base"
         :eye="eye"
@@ -24,7 +25,8 @@
         <input type="range" min="60" max="250" v-model="size" />
       </div>
       <div>
-        <button type="button" @click="random">random</button>
+        <button type="button" @click="random">Random</button>
+        <button type="button" @click="getpng">Export as PNG</button>
       </div>
 
       <div>
@@ -177,6 +179,7 @@ import {
   COLORS,
 } from "./components/NiceAvatar/types";
 import NiceAvatar from "./components/NiceAvatar/NiceAvatar";
+import { saveSvgAsPng } from "save-svg-as-png";
 
 export default {
   name: "App",
@@ -257,6 +260,16 @@ export default {
     },
     getRandom(list) {
       return list[Math.floor(Math.random() * list.length)];
+    },
+    async getpng() {
+      const opts = {
+        scale: 1,
+        encoderOptions: 1,
+      };
+
+      const data = document.getElementById("NiceAvatar");
+
+      return await saveSvgAsPng(data, "NiceAvatar", opts);
     },
   },
 };
