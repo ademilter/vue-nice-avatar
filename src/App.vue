@@ -1,8 +1,8 @@
 <template>
   <div class="screen">
-    <div class="avatar" >
+    <div class="avatar">
       <NiceAvatar
-        id="NiceAvatar" 
+        id="NiceAvatar"
         :size="size"
         :base="base"
         :eye="eye"
@@ -181,9 +181,6 @@ import {
 import NiceAvatar from "./components/NiceAvatar/NiceAvatar";
 import { saveSvgAsPng } from "save-svg-as-png";
 
-
-
-
 export default {
   name: "App",
   components: {
@@ -264,20 +261,16 @@ export default {
     getRandom(list) {
       return list[Math.floor(Math.random() * list.length)];
     },
-    async getpng(){
+    async getpng() {
       const opts = {
         scale: 1,
-        encoderOptions: 1
-        }
+        encoderOptions: 1,
+      };
 
-      const data = document.getElementById('NiceAvatar'); 
+      const data = document.getElementById("NiceAvatar");
 
-      return await saveSvgAsPng(data,"NiceAvatar",opts);
-
-
+      return await saveSvgAsPng(data, "NiceAvatar", opts);
     },
-
-  
   },
 };
 </script>
