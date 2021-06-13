@@ -2,7 +2,7 @@
   <div class="screen">
     <div class="avatar">
       <NiceAvatar
-        id="NiceAvatar"
+        ref="niceAvatar"
         :size="size"
         :base="base"
         :eye="eye"
@@ -26,7 +26,7 @@
       </div>
       <div>
         <button type="button" @click="random">Random</button>
-        <button type="button" @click="getpng">Export as PNG</button>
+        <button type="button" @click="getPng">Save as PNG</button>
       </div>
 
       <div>
@@ -188,20 +188,20 @@ export default {
   },
   data() {
     return {
-      size: null,
-      base: BASE.LIGHT,
-      eye: EYES.OVAL,
-      eyeBrow: EYEBROWS.EYEBROWS_UP,
-      ear: EAR.SMALL,
-      earring: EARRING.NONE,
-      mouth: MOUTH.LAUGHING,
-      hair: HAIR.FONZA,
-      nose: NOSE.CURVE,
-      glasses: GLASSES.NONE,
-      beard: BEARD.NONE,
-      beardColor: "#a56d55",
-      shirt: SHIRT.COLLARED,
-      bgColor: COLORS.SEASHELL,
+      size: 230,
+      base: null,
+      eye: null,
+      eyeBrow: null,
+      ear: null,
+      earring: null,
+      mouth: null,
+      hair: null,
+      nose: null,
+      glasses: null,
+      beard: null,
+      beardColor: null,
+      shirt: null,
+      bgColor: null,
     };
   },
   computed: {
@@ -261,15 +261,13 @@ export default {
     getRandom(list) {
       return list[Math.floor(Math.random() * list.length)];
     },
-    async getpng() {
+    async getPng() {
       const opts = {
         scale: 1,
         encoderOptions: 1,
       };
-
-      const data = document.getElementById("NiceAvatar");
-
-      return await saveSvgAsPng(data, "NiceAvatar", opts);
+      const $el = this.$refs.niceAvatar.$el;
+      return await saveSvgAsPng($el, "nice-avatar", opts);
     },
   },
 };
@@ -322,5 +320,9 @@ label {
   gap: 6px;
   margin-right: 10px;
   margin-bottom: 10px;
+}
+
+button {
+  padding: 4px 6px;
 }
 </style>
