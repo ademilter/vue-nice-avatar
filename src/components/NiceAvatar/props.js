@@ -93,6 +93,10 @@ export default {
     default: "#a56d55",
     type: String,
   },
+  shirtColor: {
+    default: "#6bd9e9",
+    type: String,
+  },
   shirt: {
     default: SHIRT.COLLARED,
     type: String,

@@ -16,6 +16,7 @@
         :beard="beard"
         :beard-color="beardColor"
         :shirt="shirt"
+        :shirt-color="shirtColor"
         :bg-color="bgColor"
       />
     </div>
@@ -27,6 +28,15 @@
       <div>
         <button type="button" @click="random">Random</button>
         <button type="button" @click="getpng">Export as PNG</button>
+      </div>
+
+      <div>
+        <h4>Background Color</h4>
+        <div>
+          <label>
+            <input type="color" name="bgColor" v-model="bgColor" />
+          </label>
+        </div>
       </div>
 
       <div>
@@ -157,6 +167,9 @@
             <input type="radio" name="shirt" :value="value" v-model="shirt" />
             {{ value }}
           </label>
+          <label>
+            <input type="color" name="shirtColor" v-model="shirtColor" />
+          </label>
         </div>
       </div>
     </div>
@@ -188,7 +201,7 @@ export default {
   },
   data() {
     return {
-      size: null,
+      size: 250,
       base: BASE.LIGHT,
       eye: EYES.OVAL,
       eyeBrow: EYEBROWS.EYEBROWS_UP,
@@ -201,6 +214,7 @@ export default {
       beard: BEARD.NONE,
       beardColor: "#a56d55",
       shirt: SHIRT.COLLARED,
+      shirtColor: "#6bd9e9",
       bgColor: COLORS.SEASHELL,
     };
   },

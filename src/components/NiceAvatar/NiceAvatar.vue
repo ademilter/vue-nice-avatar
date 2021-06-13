@@ -28,7 +28,7 @@
       <Nose :nose="nose" />
       <Ear :ear="ear" :base="base" />
       <Earring :ear="ear" :earring="earring" />
-      <Shirt :shirt="shirt" />
+      <Shirt :shirt="shirt" :shirt-color="shirtColor" />
     </g>
     <defs>
       <clipPath id="clip0">
