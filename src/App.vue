@@ -11,6 +11,7 @@
         :earring="earring"
         :mouth="mouth"
         :hair="hair"
+        :hair-color="hairColor"
         :nose="nose"
         :glasses="glasses"
         :beard="beard"
@@ -132,6 +133,9 @@
             <input type="radio" name="hair" :value="value" v-model="hair" />
             {{ value }}
           </label>
+          <label>
+            <input type="color" name="hairColor" v-model="hairColor" />
+          </label>
         </div>
       </div>
 
@@ -189,7 +193,11 @@ import {
   GLASSES,
   BEARD,
   SHIRT,
-  COLORS,
+  SHIRT_COLORS,
+  BG_COLORS,
+  FACE_COLORS,
+  HAIR_COLORS,
+  BEARD_COLORS,
 } from "./components/NiceAvatar/types";
 import NiceAvatar from "./components/NiceAvatar/NiceAvatar";
 import { saveSvgAsPng } from "save-svg-as-png";
@@ -209,13 +217,14 @@ export default {
       earring: EARRING.NONE,
       mouth: MOUTH.LAUGHING,
       hair: HAIR.FONZA,
+      hairColor: HAIR_COLORS[0],
       nose: NOSE.CURVE,
       glasses: GLASSES.NONE,
       beard: BEARD.NONE,
-      beardColor: "#a56d55",
+      beardColor: BEARD_COLORS[0],
       shirt: SHIRT.COLLARED,
-      shirtColor: "#6bd9e9",
-      bgColor: COLORS.SEASHELL,
+      shirtColor: SHIRT_COLORS[0],
+      bgColor: BG_COLORS[0],
     };
   },
   computed: {
@@ -258,19 +267,21 @@ export default {
   },
   methods: {
     random() {
-      this.bgColor = this.getRandom(Object.values(COLORS));
-      this.base = this.getRandom([COLORS.APRICOT, COLORS.COAST]);
+      this.bgColor = this.getRandom(BG_COLORS);
+      this.base = this.getRandom(FACE_COLORS);
       this.beard = this.getRandom(Object.values(BEARD));
-      this.beardColor = this.getRandom([COLORS.APRICOT, COLORS.COAST]);
+      this.beardColor = this.getRandom(BEARD_COLORS);
       this.eye = this.getRandom(Object.values(EYES));
       this.eyeBrow = this.getRandom(Object.values(EYEBROWS));
       this.ear = this.getRandom(Object.values(EAR));
       this.earring = this.getRandom(Object.values(EARRING));
       this.mouth = this.getRandom(Object.values(MOUTH));
       this.hair = this.getRandom(Object.values(HAIR));
+      this.hairColor = this.getRandom(HAIR_COLORS);
       this.nose = this.getRandom(Object.values(NOSE));
       this.glasses = this.getRandom(Object.values(GLASSES));
       this.shirt = this.getRandom(Object.values(SHIRT));
+      this.shirtColor = this.getRandom(SHIRT_COLORS);
     },
     getRandom(list) {
       return list[Math.floor(Math.random() * list.length)];
@@ -317,6 +328,8 @@ body {
 .avatar {
   position: sticky;
   top: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .options {
