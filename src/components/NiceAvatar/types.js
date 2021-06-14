@@ -76,16 +76,38 @@ export const SHIRT = {
   OPEN: "open",
 };
 
-export const COLORS = {
-  APRICOT: "#F9C9B6",
-  COAST: "#AC6651",
-  TOPAZ: "#77311D",
-  LAVENDER: "#9287FF",
-  SKY: "#77311D",
-  SALMON: "#FC909F",
-  CANARY: "#F4D150",
-  CALM: "#E0DDFF",
-  AZURE: "#D2EFF3",
-  SEASHELL: "#FFEDEF",
-  MELLOW: "#FFEBA4",
-};
+export const BEARD_COLORS = ["#BB9E95", "#65473E"];
+
+export const HAIR_COLORS = [
+  "#000",
+  "#fff",
+  "#77311D",
+  "#FC909F",
+  "#D2EFF3",
+  "#506AF4",
+  "#F48150",
+];
+
+export const BG_COLORS = [
+  "#9287FF",
+  "#6BD9E9",
+  "#FC909F",
+  "#F4D150",
+  "#E0DDFF",
+  "#D2EFF3",
+  "#FFEDEF",
+  "#FFEBA4",
+  "#506AF4",
+  "#F48150",
+  "#74D153",
+];
+
+export const SHIRT_COLORS = [
+  "#9287FF",
+  "#6BD9E9",
+  "#FC909F",
+  "#F4D150",
+  "#77311D",
+];
+
+export const FACE_COLORS = ["#F9C9B6", "#AC6651"];
