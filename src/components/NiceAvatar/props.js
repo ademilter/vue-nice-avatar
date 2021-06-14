@@ -10,7 +10,10 @@ import {
   GLASSES,
   BEARD,
   SHIRT,
-  COLORS,
+  BG_COLORS,
+  HAIR_COLORS,
+  BEARD_COLORS,
+  SHIRT_COLORS,
 } from "./types";
 
 export default {
@@ -19,7 +22,7 @@ export default {
     type: [String, Number],
   },
   bgColor: {
-    default: COLORS.AZURE,
+    default: BG_COLORS[0],
     type: String,
   },
   base: {
@@ -89,12 +92,16 @@ export default {
       return Object.values(BEARD).indexOf(value) !== -1;
     },
   },
+  hairColor: {
+    default: HAIR_COLORS[0],
+    type: String,
+  },
   beardColor: {
-    default: "#a56d55",
+    default: BEARD_COLORS[0],
     type: String,
   },
   shirtColor: {
-    default: "#6bd9e9",
+    default: SHIRT_COLORS[0],
     type: String,
   },
   shirt: {
