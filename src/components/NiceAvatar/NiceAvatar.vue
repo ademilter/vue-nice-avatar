@@ -22,7 +22,7 @@
       <Base :base="base" :beard="beard" :beard-color="beardColor" />
       <Mouth :mouth="mouth" />
       <EyeBrows :eye-brow="eyeBrow" />
-      <Hair :hair="hair" />
+      <Hair :hair="hair" :hair-color="hairColor" />
       <Eyes :eye="eye" />
       <Glasses :glasses="glasses" />
       <Nose :nose="nose" />
