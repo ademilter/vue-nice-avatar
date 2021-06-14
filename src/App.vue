@@ -2,7 +2,7 @@
   <div class="screen">
     <div class="avatar">
       <NiceAvatar
-        id="NiceAvatar"
+        ref="niceAvatar"
         :size="size"
         :base="base"
         :eye="eye"
@@ -26,9 +26,12 @@
       <div>
         <input type="range" min="60" max="250" v-model="size" />
       </div>
-      <div>
+      <div class="buttons">
         <button type="button" @click="random">Random</button>
-        <button type="button" @click="getpng">Export as PNG</button>
+        <button type="button" @click="getPng">Save as PNG</button>
+        <a target="_blank" href="https://github.com/ademilter/vue-nice-avatar"
+          >Github</a
+        >
       </div>
 
       <div>
@@ -286,15 +289,13 @@ export default {
     getRandom(list) {
       return list[Math.floor(Math.random() * list.length)];
     },
-    async getpng() {
+    async getPng() {
       const opts = {
         scale: 1,
         encoderOptions: 1,
       };
-
-      const data = document.getElementById("NiceAvatar");
-
-      return await saveSvgAsPng(data, "NiceAvatar", opts);
+      const $el = this.$refs.niceAvatar.$el;
+      return await saveSvgAsPng($el, "nice-avatar", opts);
     },
   },
 };
@@ -349,5 +350,16 @@ label {
   gap: 6px;
   margin-right: 10px;
   margin-bottom: 10px;
+}
+
+button {
+  padding: 4px 6px;
+}
+
+.buttons {
+  display: grid;
+  grid-gap: 10px;
+  grid-auto-flow: column;
+  align-items: center;
 }
 </style>
