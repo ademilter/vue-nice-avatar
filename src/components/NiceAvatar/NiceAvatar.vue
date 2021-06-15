@@ -19,16 +19,16 @@
       <circle cx="190" cy="190" r="190" fill="#FFEDEF" />
     </mask>
     <g mask="url(#mask0)">
-      <Base :base="base" :beard="beard" :beard-color="beardColor" />
+      <Face :faceColor="faceColor" :beard="beard" :beard-color="beardColor" />
       <Mouth :mouth="mouth" />
       <EyeBrows :eye-brow="eyeBrow" />
-      <Hair :hair="hair" />
+      <Hair :hair="hair" :hair-color="hairColor" />
       <Eyes :eye="eye" />
       <Glasses :glasses="glasses" />
       <Nose :nose="nose" />
-      <Ear :ear="ear" :base="base" />
+      <Ear :ear="ear" :faceColor="faceColor" />
       <Earring :ear="ear" :earring="earring" />
-      <Shirt :shirt="shirt" />
+      <Shirt :shirt="shirt" :shirt-color="shirtColor" />
     </g>
     <defs>
       <clipPath id="clip0">
@@ -47,7 +47,7 @@
 import props from "./props";
 import Eyes from "@/components/NiceAvatar/Eyes";
 import EyeBrows from "@/components/NiceAvatar/EyeBrows";
-import Base from "@/components/NiceAvatar/Base";
+import Face from "@/components/NiceAvatar/Face";
 import Ear from "@/components/NiceAvatar/Ear";
 import Earring from "@/components/NiceAvatar/Earring";
 import Mouth from "@/components/NiceAvatar/Mouth";
@@ -63,7 +63,7 @@ export default {
     Glasses,
     Hair,
     Mouth,
-    Base,
+    Face,
     EyeBrows,
     Eyes,
     Ear,
