@@ -2,7 +2,6 @@ import {
   EYES,
   EYEBROWS,
   EAR,
-  BASE,
   EARRING,
   MOUTH,
   HAIR,
@@ -14,7 +13,12 @@ import {
   HAIR_COLORS,
   BEARD_COLORS,
   SHIRT_COLORS,
+  FACE_COLORS,
 } from "./types";
+
+function getRandomItem(list) {
+  return list[Math.floor(Math.random() * list.length)];
+}
 
 export default {
   size: {
@@ -22,90 +26,90 @@ export default {
     type: [String, Number],
   },
   bgColor: {
-    default: BG_COLORS[0],
+    default: getRandomItem(BG_COLORS),
     type: String,
   },
-  base: {
-    default: BASE.LIGHT,
+  faceColor: {
+    default: getRandomItem(FACE_COLORS),
     type: String,
   },
   eye: {
-    default: EYES.CIRCLE,
+    default: getRandomItem(Object.values(EYES)),
     type: String,
     validator: function (value) {
       return Object.values(EYES).indexOf(value) !== -1;
     },
   },
   eyeBrow: {
-    default: EYEBROWS.EYEBROWS_UP,
+    default: getRandomItem(Object.values(EYEBROWS)),
     type: String,
     validator: function (value) {
       return Object.values(EYEBROWS).indexOf(value) !== -1;
     },
   },
   ear: {
-    default: EAR.SMALL,
+    default: getRandomItem(Object.values(EAR)),
     type: String,
     validator: function (value) {
       return Object.values(EAR).indexOf(value) !== -1;
     },
   },
   earring: {
-    default: EARRING.NONE,
+    default: getRandomItem(Object.values(EARRING)),
     type: String,
     validator: function (value) {
       return Object.values(EARRING).indexOf(value) !== -1;
     },
   },
   mouth: {
-    default: MOUTH.SMILE,
+    default: getRandomItem(Object.values(MOUTH)),
     type: String,
     validator: function (value) {
       return Object.values(MOUTH).indexOf(value) !== -1;
     },
   },
   hair: {
-    default: HAIR.DANNY_PHANTOM,
+    default: getRandomItem(Object.values(HAIR)),
     type: String,
     validator: function (value) {
       return Object.values(HAIR).indexOf(value) !== -1;
     },
   },
   nose: {
-    default: NOSE.CURVE,
+    default: getRandomItem(Object.values(NOSE)),
     type: String,
     validator: function (value) {
       return Object.values(NOSE).indexOf(value) !== -1;
     },
   },
   glasses: {
-    default: GLASSES.NONE,
+    default: getRandomItem(Object.values(GLASSES)),
     type: String,
     validator: function (value) {
       return Object.values(GLASSES).indexOf(value) !== -1;
     },
   },
   beard: {
-    default: BEARD.NONE,
+    default: getRandomItem(Object.values(BEARD)),
     type: String,
     validator: function (value) {
       return Object.values(BEARD).indexOf(value) !== -1;
     },
   },
   hairColor: {
-    default: HAIR_COLORS[0],
+    default: getRandomItem(HAIR_COLORS),
     type: String,
   },
   beardColor: {
-    default: BEARD_COLORS[0],
+    default: getRandomItem(BEARD_COLORS),
     type: String,
   },
   shirtColor: {
-    default: SHIRT_COLORS[0],
+    default: getRandomItem(SHIRT_COLORS),
     type: String,
   },
   shirt: {
-    default: SHIRT.COLLARED,
+    default: getRandomItem(Object.values(SHIRT)),
     type: String,
     validator: function (value) {
       return Object.values(SHIRT).indexOf(value) !== -1;

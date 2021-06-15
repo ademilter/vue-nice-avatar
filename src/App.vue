@@ -4,7 +4,7 @@
       <NiceAvatar
         ref="niceAvatar"
         :size="size"
-        :base="base"
+        :face-color="faceColor"
         :eye="eye"
         :eye-brow="eyeBrow"
         :ear="ear"
@@ -44,14 +44,19 @@
       </div>
 
       <div>
-        <h4>Base</h4>
+        <h4>Face</h4>
         <div>
-          <label v-for="value in baseValues" :key="value">
-            <input type="radio" name="base" :value="value" v-model="base" />
+          <label v-for="value in FACE_COLORS" :key="value">
+            <input
+              type="radio"
+              name="face"
+              :value="value"
+              v-model="faceColor"
+            />
             {{ value }}
           </label>
           <label>
-            <input type="color" name="base" v-model="base" />
+            <input type="color" name="face" v-model="faceColor" />
           </label>
         </div>
       </div>
@@ -185,7 +190,6 @@
 
 <script>
 import {
-  BASE,
   EYES,
   EYEBROWS,
   EAR,
@@ -213,7 +217,7 @@ export default {
   data() {
     return {
       size: 250,
-      base: BASE.LIGHT,
+      faceColor: FACE_COLORS[0],
       eye: EYES.OVAL,
       eyeBrow: EYEBROWS.EYEBROWS_UP,
       ear: EAR.SMALL,
@@ -228,12 +232,10 @@ export default {
       shirt: SHIRT.COLLARED,
       shirtColor: SHIRT_COLORS[0],
       bgColor: BG_COLORS[0],
+      FACE_COLORS,
     };
   },
   computed: {
-    baseValues() {
-      return Object.values(BASE);
-    },
     eyesValues() {
       return Object.values(EYES);
     },
@@ -271,7 +273,7 @@ export default {
   methods: {
     random() {
       this.bgColor = this.getRandom(BG_COLORS);
-      this.base = this.getRandom(FACE_COLORS);
+      this.faceColor = this.getRandom(FACE_COLORS);
       this.beard = this.getRandom(Object.values(BEARD));
       this.beardColor = this.getRandom(BEARD_COLORS);
       this.eye = this.getRandom(Object.values(EYES));

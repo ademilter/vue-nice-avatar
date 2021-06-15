@@ -1,8 +1,3 @@
-export const BASE = {
-  LIGHT: "#F9C9B6",
-  DARK: "#AC6651",
-};
-
 export const EYES = {
   CIRCLE: "circle",
   OVAL: "oval",
@@ -79,8 +74,6 @@ export const SHIRT = {
 export const BEARD_COLORS = ["#BB9E95", "#65473E"];
 
 export const HAIR_COLORS = [
-  "#000",
-  "#fff",
   "#77311D",
   "#FC909F",
   "#D2EFF3",
