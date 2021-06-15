@@ -37,10 +37,24 @@ yarn add vue-nice-avatar
 
 The options can be passed into genConfig or as React props
 
-| key         | type   | default | accept | tips                 |
-| ----------- | ------ | ------- | ------ | -------------------- |
-| `id`        | string |         |        | Only for React Props |
-| `className` | string |         |        | Only for React Props |
+| key          | type             | default | accept                                                                      |
+| ------------ | ---------------- | ------- | --------------------------------------------------------------------------- |
+| `size`       | string or number | 120     |                                                                             |
+| `bgColor`    | string           | random  |                                                                             |
+| `faceColor`  | string           | random  |                                                                             |
+| `eye`        | string           | random  | circle, oval, smile, shadow                                                 |
+| `eyeBrow`    | string           | random  | none, eyebrows-up, eyebrows-down, eyelashes-down, eyelashes-up              |
+| `ear`        | string           | random  | small, big                                                                  |
+| `earring`    | string           | random  | none, stud, hoop                                                            |
+| `mouth`      | string           | random  | frown, laughing, nervous, pucker, sad, smile, smirk, suprised               |
+| `hair`       | string           | random  | none, danny-phantom, doug-funny, fonza, full, mr-clean, mr-t, pixie, turban |
+| `hairColor`  | string           | random  |                                                                             |
+| `nose`       | string           | random  | curve, pointed, round                                                       |
+| `glasses`    | string           | random  | none, round, square                                                         |
+| `beard`      | string           | random  | none, hipster, scruff                                                       |
+| `beardColor` | string           | random  |                                                                             |
+| `shirt`      | string           | random  | collared, crew, open                                                        |
+| `shirtColor` | string           | random  |                                                                             |
 
 ## Development
 
