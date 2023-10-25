@@ -93,6 +93,7 @@ export const BG_COLORS = [
   "#506AF4",
   "#F48150",
   "#74D153",
+  "#5b5b5b"
 ];
 
 export const SHIRT_COLORS = [
